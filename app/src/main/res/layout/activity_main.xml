@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+            <com.flaviofaria.kenburnsview.KenBurnsView
+                android:id="@+id/paralaxImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bgpicture" />
+        </FrameLayout>
+    </HorizontalScrollView>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0.0dp">
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_scrollFlags="enterAlways|scroll">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                app:layout_scrollFlags="enterAlways|scroll">
+                <com.hanks.htextview.evaporate.EvaporateTextView
+                    android:id="@+id/headerTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="25.0sp" />
+            </androidx.appcompat.widget.Toolbar>
+        </FrameLayout>
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/smartTabLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/toolbar"
+            app:stl_clickable="true"
+            app:stl_defaultTabBackground="?selectableItemBackground"
+            app:stl_defaultTabTextAllCaps="false"
+            app:stl_defaultTabTextColor="#ffffffff"
+            app:stl_defaultTabTextHorizontalPadding="30.0dip"
+            app:stl_defaultTabTextMinWidth="0.0dip"
+            app:stl_defaultTabTextSize="16.0sp"
+            app:stl_distributeEvenly="false"
+            app:stl_dividerColor="#ffffffff"
+            app:stl_dividerThickness="0.0dip"
+            app:stl_drawDecorationAfterTab="false"
+            app:stl_indicatorAlwaysInCenter="false"
+            app:stl_indicatorColor="#6a000000"
+            app:stl_indicatorCornerRadius="10.0dip"
+            app:stl_indicatorGravity="center"
+            app:stl_indicatorInFront="false"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorThickness="30.0dip"
+            app:stl_indicatorWidth="110.0dip"
+            app:stl_indicatorWithoutPadding="false"
+            app:stl_overlineColor="#4d000000"
+            app:stl_overlineThickness="0.0dip"
+            app:stl_titleOffset="24.0dip"
+            app:stl_underlineColor="#ffffffff"
+            app:stl_underlineThickness="0.0dip"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:paddingTop="8dp"
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
